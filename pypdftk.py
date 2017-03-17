@@ -644,17 +644,13 @@ class WndMain(QtGui.QMainWindow):
         dialog.exec_()
 
 
-#%%
+
+def main():
+
+    app = QtGui.QApplication(sys.argv)
+    ex = WndMain()
+    sys.exit(app.exec_())
+
+
 if __name__ == '__main__':
-    myappid = u'br.com.dapaixao.pypdftk.1.0'
-    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
-    existing = QtGui.qApp.instance()
-    if existing:
-        app = existing
-    else:
-        app = QtGui.QApplication(sys.argv)
-    wnd = WndMain()
-    if existing:
-        self = wnd
-    else:
-        sys.exit(app.exec_())
+    main()
